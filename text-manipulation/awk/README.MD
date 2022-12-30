@@ -19,24 +19,24 @@ After processing all the input records, AWK prints the output to standard output
 
 Here is a list of some common options that can be used with awk:
 
-- -F fs: Specify the field separator (fs) to use when parsing input.
-- -v var=value: Set the value of a variable (var) to value.
-- -f scriptfile: Read the awk script from scriptfile instead of from the command line.
-- -m[fr]: Enable memory-mapped files for faster processing. The f and r options specify whether to use memory-mapped files for input and output, respectively.
-- -O: Enable optimization of the awk script.
-- -o outfile: Write output to outfile instead of to the terminal.
-- -W[compat|copyright|lint|posix|re-interval]: Enable compatibility or warning options.
-- -M: Enable multibyte character support.
+- **-F fs**: Specify the field separator (fs) to use when parsing input.
+- **-v var=value**: Set the value of a variable (var) to value.
+- **-f scriptfile**: Read the awk script from scriptfile instead of from the command line.
+- **-m[fr]**: Enable memory-mapped files for faster processing. The f and r options specify whether to use memory-mapped files for input and output, respectively.
+- **-O**: Enable optimization of the awk script.
+- **-o outfile**: Write output to outfile instead of to the terminal.
+- **-W[compat|copyright|lint|posix|re-interval]**: Enable compatibility or warning options.
+- **-M**: Enable multibyte character support.
 
 Here is a list of some common awk built-in variables:
 
-- $0: The entire input line.
-- $1, $2, ...: The first, second, etc. fields in the input line.
-- NF: The number of fields in the input line.
-- NR: The number of input records processed so far.
-- FS: The field separator.
-- OFS: The output field separator.
-- ORS: The output record separator.
+- **$0**: The entire input line.
+- **$1, $2, ...**: The first, second, etc. fields in the input line.
+- **NF**: The number of fields in the input line.
+- **NR**: The number of input records processed so far.
+- **FS**: The field separator.
+- **OFS**: The output field separator.
+- **ORS**: The output record separator.
 
 Here is a simple example of an AWK script that searches for a specific pattern in a file and prints the matching lines:
 
