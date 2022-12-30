@@ -20,4 +20,25 @@ fmt -w 75 input.txt
 
 This command reads the input file and reformats the lines to fit within a 75-character line width.
 
-For more information about Fmt, you can refer to the official Fmt documentation or the documentation for your specific Fmt implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+
+## More Use Case Examples with Fmt
+
+Indent paragraphs: fmt can be used to indent the first line of each paragraph in a file. For example:
+
+```
+fmt -i file.txt
+```
+
+Adjust the spacing between words: fmt can be used to adjust the spacing between words in a file. For example, to double the spacing between words:
+
+```
+fmt -s -2 file.txt
+```
+
+Reformat text from standard input: fmt can be used to reformat text from standard input, allowing you to use it in a pipeline with other commands. For example, to reformat the output of the ls command:
+
+```
+ls -l | fmt -w 80
+```
+
+

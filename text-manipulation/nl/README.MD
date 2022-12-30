@@ -19,5 +19,30 @@ nl input.txt
 ```
 This command reads the input file and adds line numbers to the beginning of each line. The resulting output consists of numbered lines.
 
-For more information about Nl, you can refer to the official Nl documentation or the documentation for your specific Nl implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+## More Use Case Examples with Nl
+
+Number the lines of standard input: nl can be used to number the lines of standard input, allowing you to use it in a pipeline with other commands. For example, to number the lines of the output of the ls command:
+
+```
+ls | nl
+```
+
+Number the lines of a file and write the output to a new file: nl can be used to number the lines of a file and write the output to a new file by redirecting the output of nl to a new file. For example:
+
+```
+nl file.txt > numberedfile.txt
+```
+
+Number the lines of a file starting from a specific number: nl can be used to specify the starting line number using the -n option. For example, to start numbering the lines of a file from 100:
+
+```
+nl -n 100 file.txt
+```
+
+Number the lines of a file using a specific numbering format: nl can be used to specify the numbering format using the -b option. For example, to number the lines of a file using Roman numerals:
+
+```
+nl -b roman file.txt
+```
+
 

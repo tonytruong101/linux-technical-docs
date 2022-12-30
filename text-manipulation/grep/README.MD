@@ -20,4 +20,29 @@ grep pattern input.txt
 
 This command searches for lines that contain the word "pattern" in the input file and prints the entire line.
 
-For more information about Grep, you can refer to the official Grep documentation or the documentation for your specific Grep implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+
+## More Use Case Examples with Grep
+
+Search for a pattern in multiple files: grep can be used to search for a pattern in multiple files by specifying a list of file names. For example, to search for the word "error" in all log files in a directory:
+
+```
+grep "error" *.log
+```
+
+Search for a pattern in standard input: grep can be used to search for a pattern in standard input, allowing you to use it in a pipeline with other commands. For example, to search for the word "error" in the output of the ls command:
+
+```
+ls | grep "error"
+```
+
+Search for a pattern in a compressed file: grep can be used in combination with other utilities, such as gunzip, to search for a pattern in a compressed file. For example:
+
+```
+gunzip -c compressedfile.gz | grep "error"
+```
+
+Search for a pattern using regular expressions: grep supports regular expressions, which allow you to specify more complex patterns to search for. For example, to search for lines that contain any three-digit number:
+
+```
+grep '[0-9][0-9][0-9]' file.txt
+```

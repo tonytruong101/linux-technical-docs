@@ -20,4 +20,31 @@ sort input.txt
 
 This command sorts the lines in the input file alphabetically in ascending order and prints the sorted lines to stdout.
 
-For more information about Sort, you can refer to the official Sort documentation or the documentation for your specific Sort implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+
+## More Use Case Examples with Sort
+
+Sort a file numerically: sort can be used to sort the lines of a file numerically. You can specify the -n option to sort the lines numerically. For example:
+
+```
+sort -n file.txt
+```
+
+Sort a file in reverse order: sort can be used to sort the lines of a file in reverse order. You can specify the -r option to sort the lines in reverse order. For example:
+
+```
+sort -r file.txt
+```
+
+Sort a file based on a specific field: sort can be used to sort the lines of a file based on a specific field or column. You can specify the field using the -k option. For example, to sort a file based on the second field:
+
+```
+sort -k 2 file.txt
+```
+
+Sort a file using a custom sorting order: sort can be used to specify a custom sorting order using the -t and -b options. For example, to sort a file using a custom order that ignores leading spaces and treats numbers as text:
+
+```
+sort -t ' ' -b file.txt
+```
+
+

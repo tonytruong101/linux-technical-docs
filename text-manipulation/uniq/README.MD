@@ -12,11 +12,35 @@ Uniq is a command-line tool that is used to remove duplicate lines from a file o
 
 After processing the input lines, Uniq prints the output to standard output (stdout) or writes it to a file.
 
-Here is a simple example of a Uniq command that removes duplicate lines from a file:
+
+## More Use Case Examples with Uniq
+
+Remove duplicate lines from a file: uniq can be used to remove duplicate lines from a file and display the output on the terminal. For example:
 
 ```
-This command reads the input file and removes any lines that are identical to a preceding line. The resulting output consists of only unique lines.
-
-For more information about Uniq, you can refer to the official Uniq documentation or the documentation for your specific Uniq implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+uniq file.txt
 ```
 
+Display only duplicate lines in a file: uniq can be used to display only the duplicate lines in a file by specifying the -d option. For example:
+
+```
+uniq -d file.txt
+```
+
+Remove duplicate lines from standard input: uniq can be used to remove duplicate lines from standard input, allowing you to use it in a pipeline with other commands. For example, to remove duplicate lines from the output of the ls command:
+
+```
+ls | uniq
+```
+
+Ignore leading spaces when identifying duplicate lines: uniq can be used to ignore leading spaces when identifying duplicate lines by specifying the -b option. For example:
+
+```
+uniq -b file.txt
+```
+
+Ignore the first n fields when identifying duplicate lines: uniq can be used to ignore the first n fields when identifying duplicate lines by specifying the -f option. For example, to ignore the first two fields:
+
+```
+uniq -f 2 file.txt
+```

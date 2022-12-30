@@ -18,6 +18,34 @@ wc -l input.txt
 ```
 This command reads the input file and counts the number of lines. The resulting output consists of a single number that represents the total number of lines in the file.
 
-For more information about Wc, you can refer to the official Wc documentation or the documentation for your specific Wc implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
+## More Use Case Examples with Wc
 
+Display the word count of a file: wc can be used to display the number of words in a file. You can specify the -w option to display only the word count. For example:
 
+```
+wc -w file.txt
+```
+
+Display the byte count of a file: wc can be used to display the number of bytes in a file. You can specify the -c option to display only the byte count. For example:
+
+```
+wc -c file.txt
+```
+
+Display the line, word, and byte count of a file: wc can be used to display the line, word, and byte count of a file by not specifying any options. For example:
+
+```
+wc file.txt
+```
+
+Count the number of characters in a file: wc can be used to count the number of characters in a file by specifying the -m option. For example:
+
+```
+wc -m file.txt
+```
+
+Count the number of lines in a file: wc can be used to count the number of lines in a file by specifying the -l option. For example:
+
+```
+wc -l file.txt
+```
