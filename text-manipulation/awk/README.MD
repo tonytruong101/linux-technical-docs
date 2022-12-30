@@ -15,6 +15,29 @@ AWK also provides a set of built-in functions that can be used in patterns and a
 
 After processing all the input records, AWK prints the output to standard output (stdout) or writes it to a file.
 
+## Awk Options & What they do
+
+Here is a list of some common options that can be used with awk:
+
+- -F fs: Specify the field separator (fs) to use when parsing input.
+- -v var=value: Set the value of a variable (var) to value.
+- -f scriptfile: Read the awk script from scriptfile instead of from the command line.
+- -m[fr]: Enable memory-mapped files for faster processing. The f and r options specify whether to use memory-mapped files for input and output, respectively.
+- -O: Enable optimization of the awk script.
+- -o outfile: Write output to outfile instead of to the terminal.
+- -W[compat|copyright|lint|posix|re-interval]: Enable compatibility or warning options.
+- -M: Enable multibyte character support.
+
+Here is a list of some common awk built-in variables:
+
+- $0: The entire input line.
+- $1, $2, ...: The first, second, etc. fields in the input line.
+- NF: The number of fields in the input line.
+- NR: The number of input records processed so far.
+- FS: The field separator.
+- OFS: The output field separator.
+- ORS: The output record separator.
+
 Here is a simple example of an AWK script that searches for a specific pattern in a file and prints the matching lines:
 
 ```
@@ -27,25 +50,29 @@ For more information about AWK, you can refer to the official AWK documentation 
 
 ## Other Example Use Cases of AWK
 
-Extracting and manipulating specific fields in a file: awk can parse fields from a file or standard input and perform operations on them, such as printing, formatting, or arithmetic calculations. For example, you can use awk to print the second field of each line in a file:
+Extracting and manipulating specific fields in a file: awk can parse fields from a file or standard input and perform operations on them, such as printing, formatting, or arithmetic calculations. 
+
+For example, you can use awk to print the second field of each line in a file:
 
 ```
 awk '{print $2}' file.txt
 ```
 
-Printing lines that match a pattern: awk can search for patterns in a file and print lines that match the pattern. For example, you can use awk to print all lines that contain the word "error" in a log file:
+**Printing lines that match a pattern**: 
+awk can search for patterns in a file and print lines that match the pattern. For example, you can use awk to print all lines that contain the word "error" in a log file:
 
 ```
 awk '/error/ {print}' logfile.txt
 ```
 
-Modifying fields in a file: awk can be used to modify the contents of specific fields in a file. For example, you can use awk to increment the value of the third field in each line by 1:
+**Modifying fields in a file**: 
+awk can be used to modify the contents of specific fields in a file. For example, you can use awk to increment the value of the third field in each line by 1:
 
 ```
 awk '{$3=$3+1; print}' file.txt
 ```
 
-Generating reports: awk can be used to generate reports from data in a file. For example, you can use awk to calculate the average value of the second field in a file:
+**Generating reports**: awk can be used to generate reports from data in a file. For example, you can use awk to calculate the average value of the second field in a file:
 
 ```
 awk '{sum+=$2} END {print sum/NR}' file.txt
