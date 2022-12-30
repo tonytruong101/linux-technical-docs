@@ -15,14 +15,14 @@ Cut is a command-line tool that is used to extract specific fields or columns fr
 
 ## Cut Options & What do they do
 
-- -b: Extract specific bytes from the input.
-- -c: Extract specific characters from the input.
-- -f: Extract specific fields from the input.
-- -d: Specify the field delimiter to use when extracting fields.
-- -s: Do not print lines that do not contain the delimiter.
+- **-b**: Extract specific bytes from the input.
+- **-c**: Extract specific characters from the input.
+- **-f**: Extract specific fields from the input.
+- **-d**: Specify the field delimiter to use when extracting fields.
+- **-s**: Do not print lines that do not contain the delimiter.
 
 
-Here is a simple example of a Cut command that extracts the second and third fields from a file:
+simple example of a Cut command that extracts the second and third fields from a file:
 
 ```
 cut -f 2,3 input.txt
@@ -30,7 +30,7 @@ cut -f 2,3 input.txt
 
 This command extracts the second and third fields from each line in the input file
 
-Here is an example of how cut can be used with the -b option to extract specific bytes from the input:
+**Example -b option to extract specific bytes from the input**:
 
 ```
 cut -b 1-10 file.txt
@@ -38,7 +38,7 @@ cut -b 1-10 file.txt
 This will extract the first 10 bytes from each line of file.txt.
 
 
-Here is an example of how cut can be used with the -c option to extract specific characters from the input:
+**Example -c option to extract specific characters from the input**:
 
 ```
 cut -c 1,3,5 file.txt
@@ -46,7 +46,7 @@ cut -c 1,3,5 file.txt
 
 This will extract the first, third, and fifth characters from each line of file.txt.
 
-Here is an example of how cut can be used with the -f and -d options to extract specific fields from the input:
+**Example -f and -d options to extract specific fields from the input**:
 
 ```
 cut -f 2 -d ',' file.txt
