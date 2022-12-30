@@ -11,40 +11,75 @@ Wc is a command-line utility that is used to count the number of lines, words, a
 
 After counting the input, Wc prints the results to standard output (stdout). By default, Wc prints the number of lines, words, and characters.
 
-Here is a simple example of a Wc command that counts the number of lines in a file:
+
+## wc Options & What they do
+
+list of some common options that can be used with wc:
+
+- **-c**: Count the number of bytes.
+- **-l**: Count the number of lines.
+- **-m**: Count the number of characters.
+- **-w**: Count the number of words.
+
+**Simple example of a Wc command that counts the number of lines in a file**:
 
 ```
 wc -l input.txt
 ```
 This command reads the input file and counts the number of lines. The resulting output consists of a single number that represents the total number of lines in the file.
 
+
+**Example -l and -w options to count the number of lines and words in a file:**
+
+```
+wc -lw file.txt
+```
+This will count the number of lines and words in file.txt.
+
+**Example -c and -m options to count the number of bytes and characters in a file:**
+
+```
+wc -cm file.txt
+```
+This will count the number of bytes and characters in file.txt.
+
 ## More Use Case Examples with Wc
 
-Display the word count of a file: wc can be used to display the number of words in a file. You can specify the -w option to display only the word count. For example:
+**Display the word count of a file**: 
+
+wc can be used to display the number of words in a file. You can specify the -w option to display only the word count. For example:
 
 ```
 wc -w file.txt
 ```
 
-Display the byte count of a file: wc can be used to display the number of bytes in a file. You can specify the -c option to display only the byte count. For example:
+**Display the byte count of a file**: 
+
+wc can be used to display the number of bytes in a file. You can specify the -c option to display only the byte count. For example:
 
 ```
 wc -c file.txt
 ```
 
-Display the line, word, and byte count of a file: wc can be used to display the line, word, and byte count of a file by not specifying any options. For example:
+**Display the line, word, and byte count of a file**: 
+
+wc can be used to display the line, word, and byte count of a file by not specifying any options. For example:
 
 ```
 wc file.txt
 ```
 
-Count the number of characters in a file: wc can be used to count the number of characters in a file by specifying the -m option. For example:
+**Count the number of characters in a file**: 
+
+wc can be used to count the number of characters in a file by specifying the -m option. For example:
 
 ```
 wc -m file.txt
 ```
 
-Count the number of lines in a file: wc can be used to count the number of lines in a file by specifying the -l option. For example:
+**Count the number of lines in a file**: 
+
+wc can be used to count the number of lines in a file by specifying the -l option. For example:
 
 ```
 wc -l file.txt

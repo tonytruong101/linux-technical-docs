@@ -12,34 +12,67 @@ Uniq is a command-line tool that is used to remove duplicate lines from a file o
 
 After processing the input lines, Uniq prints the output to standard output (stdout) or writes it to a file.
 
+## Uniq Options & What they do
+
+list of some common options that can be used with uniq:
+
+- **-c**: Precede each output line with a count of the number of times the line occurred in the input.
+- **-d**: Only print duplicate lines, one for each group.
+- **-i**: Ignore case when comparing lines.
+- **-u**: Only print unique lines.
+
+**Example -c option to precede each output line with a count of the number of times it occurred in the input:**
+
+```
+uniq -c file.txt
+```
+This will filter out adjacent, duplicate lines from file.txt and precede each output line with a count of the number of times it occurred in the input.
+
+**Example -d option to only print duplicate lines, one for each group**:
+
+```
+uniq -d file.txt
+```
+This will filter out adjacent, duplicate lines from file.txt and only print the duplicate lines, one for each group.
+
 
 ## More Use Case Examples with Uniq
 
-Remove duplicate lines from a file: uniq can be used to remove duplicate lines from a file and display the output on the terminal. For example:
+**Remove duplicate lines from a file**: 
+
+uniq can be used to remove duplicate lines from a file and display the output on the terminal. For example:
 
 ```
 uniq file.txt
 ```
 
-Display only duplicate lines in a file: uniq can be used to display only the duplicate lines in a file by specifying the -d option. For example:
+**Display only duplicate lines in a file**: 
+
+uniq can be used to display only the duplicate lines in a file by specifying the -d option. For example:
 
 ```
 uniq -d file.txt
 ```
 
-Remove duplicate lines from standard input: uniq can be used to remove duplicate lines from standard input, allowing you to use it in a pipeline with other commands. For example, to remove duplicate lines from the output of the ls command:
+**Remove duplicate lines from standard input**: 
+
+uniq can be used to remove duplicate lines from standard input, allowing you to use it in a pipeline with other commands. For example, to remove duplicate lines from the output of the ls command:
 
 ```
 ls | uniq
 ```
 
-Ignore leading spaces when identifying duplicate lines: uniq can be used to ignore leading spaces when identifying duplicate lines by specifying the -b option. For example:
+**Ignore leading spaces when identifying duplicate lines**: 
+
+uniq can be used to ignore leading spaces when identifying duplicate lines by specifying the -b option. For example:
 
 ```
 uniq -b file.txt
 ```
 
-Ignore the first n fields when identifying duplicate lines: uniq can be used to ignore the first n fields when identifying duplicate lines by specifying the -f option. For example, to ignore the first two fields:
+**Ignore the first n fields when identifying duplicate lines**: 
+
+uniq can be used to ignore the first n fields when identifying duplicate lines by specifying the -f option. For example, to ignore the first two fields:
 
 ```
 uniq -f 2 file.txt
