@@ -46,11 +46,11 @@ awk '/pattern/ { print $0 }' input.txt
 
 This script searches for lines that contain the word "pattern" and prints the entire line.
 
-For more information about AWK, you can refer to the official AWK documentation or the documentation for your specific AWK implementation. You can also find a wide range of resources online, including tutorials, examples, and reference materials.
-
 ## Other Example Use Cases of AWK
 
-Extracting and manipulating specific fields in a file: awk can parse fields from a file or standard input and perform operations on them, such as printing, formatting, or arithmetic calculations. 
+**Extracting and manipulating specific fields in a file**: 
+
+awk can parse fields from a file or standard input and perform operations on them, such as printing, formatting, or arithmetic calculations. 
 
 For example, you can use awk to print the second field of each line in a file:
 
@@ -117,6 +117,17 @@ You can use awk to replace a specific string in a file with another string by se
 awk '{OFS="warning"; print $0}' file.txt >
 ```
 
+**Print only the odd-numbered lines of a file**:
+
+```
+awk 'NR % 2 == 1 {print $0}' file.txt
+```
+
+**Print only the even-numbered lines of a file:**
+
+```
+awk 'NR % 2 == 0 {print $0}' file.txt
+```
 
 ## AWK vs SED
 Both AWK and SED are text processing tools that are used for tasks such as searching and replacing text, extracting specific fields from a data file, and performing calculations on data. However, there are some key differences between the two tools that can affect when and how you should use them.

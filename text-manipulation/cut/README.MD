@@ -12,6 +12,16 @@ Cut is a command-line tool that is used to extract specific fields or columns fr
 
 1. After extracting the specified fields or columns, Cut prints the output to standard output (stdout) or writes it to a file.
 
+
+## Cut Options & What do they do
+
+- -b: Extract specific bytes from the input.
+- -c: Extract specific characters from the input.
+- -f: Extract specific fields from the input.
+- -d: Specify the field delimiter to use when extracting fields.
+- -s: Do not print lines that do not contain the delimiter.
+
+
 Here is a simple example of a Cut command that extracts the second and third fields from a file:
 
 ```
@@ -20,28 +30,60 @@ cut -f 2,3 input.txt
 
 This command extracts the second and third fields from each line in the input file
 
+Here is an example of how cut can be used with the -b option to extract specific bytes from the input:
+
+```
+cut -b 1-10 file.txt
+```
+This will extract the first 10 bytes from each line of file.txt.
+
+
+Here is an example of how cut can be used with the -c option to extract specific characters from the input:
+
+```
+cut -c 1,3,5 file.txt
+```
+
+This will extract the first, third, and fifth characters from each line of file.txt.
+
+Here is an example of how cut can be used with the -f and -d options to extract specific fields from the input:
+
+```
+cut -f 2 -d ',' file.txt
+```
+
+This will extract the second field (delimited by a ,) from each line of file.txt.
+
 
 ## More Use Case Examples with Cut
 
-Extract a specific field: cut can be used to extract a specific field or column from a file. Fields are delimited by a character such as a tab or a space, and you can specify which field you want to extract using the -f option. For example, to extract the second field from a file:
+**Extract a specific field**: 
+
+cut can be used to extract a specific field or column from a file. Fields are delimited by a character such as a tab or a space, and you can specify which field you want to extract using the -f option. For example, to extract the second field from a file:
 
 ```
 cut -f 2 file.txt
 ```
 
-Extract multiple fields: cut can be used to extract multiple fields by specifying a list of field numbers separated by commas. For example, to extract the second and fourth fields from a file:
+**Extract multiple fields**: 
+
+cut can be used to extract multiple fields by specifying a list of field numbers separated by commas. For example, to extract the second and fourth fields from a file:
 
 ```
 cut -f 2,4 file.txt
 ```
 
-Extract fields based on a delimiter other than a space or tab: cut can be used to extract fields that are delimited by a character other than a space or tab. You can specify the delimiter using the -d option. For example, to extract fields from a CSV file where the fields are delimited by commas:
+**Extract fields based on a delimiter other than a space or tab**: 
+
+cut can be used to extract fields that are delimited by a character other than a space or tab. You can specify the delimiter using the -d option. For example, to extract fields from a CSV file where the fields are delimited by commas:
 
 ```
 cut -d ',' -f 2,4 file.csv
 ```
 
-Extract fields from standard input: cut can be used to extract fields from standard input, allowing you to use it in a pipeline with other commands. For example, to extract the second field from the output of the ls command:
+**Extract fields from standard input**: 
+
+cut can be used to extract fields from standard input, allowing you to use it in a pipeline with other commands. For example, to extract the second field from the output of the ls command:
 
 ```
 ls -l | cut -d ' ' -f 9
