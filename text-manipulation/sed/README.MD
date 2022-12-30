@@ -15,40 +15,76 @@ SED is a text editor that is used for performing basic text transformations on a
 
 1. After processing all the input lines, SED prints the output to standard output (stdout) or writes it to a file.
 
-Here is a simple example of a SED command that searches for a specific pattern in a file and replaces it with a different string:
+
+## SED Options & What do they do
+
+list of some common options that can be used with sed:
+
+- **-i**: Edit the file in place (i.e., make the changes to the file directly rather than printing the transformed text to the standard output).
+- **-n**: Suppress the default output of sed.
+- **-e**: Specify a script to be executed. Multiple -e options can be used to specify multiple scripts.
+- **-f**: Read the script from a file.
+
+**Simple example of a SED command that searches for a specific pattern in a file and replaces it with a different string**:
 
 ```
 sed 's/pattern/replacement/g' input.txt
 ```
 This command searches for the string "pattern" in the input file and replaces it with the string "replacement". The g flag specifies that the replacement should be applied globally, meaning that all occurrences of the pattern should be replaced.
 
+
+**Example -i option to edit a file in place:**
+
+```
+sed -i 's/error/ERROR/g' file.txt
+```
+This will replace all occurrences of the word error with ERROR in file.txt. The changes will be made directly to the file.
+
+**Example -n and -e options to suppress the default output and specify a script to be executed:**
+
+```
+sed -n -e '/error/p' file.txt
+```
+This will print only the lines in file.txt that contain the word error.
+
+
 ## More Use Case Examples with SED
 
-Replace a specific string in a file: sed can be used to replace a specific string in a file with another string. For example, to replace all occurrences of the word "error" with the word "warning" in a file:
+**Replace a specific string in a file**: 
+
+sed can be used to replace a specific string in a file with another string. For example, to replace all occurrences of the word "error" with the word "warning" in a file:
 
 ```
 sed 's/error/warning/g' file.txt
 ```
 
-Delete specific lines from a file: sed can be used to delete specific lines from a file based on a pattern. For example, to delete all lines that contain the word "error" from a file:
+**Delete specific lines from a file**: 
+
+sed can be used to delete specific lines from a file based on a pattern. For example, to delete all lines that contain the word "error" from a file:
 
 ```
 sed '/error/d' file.txt
 ```
 
-Insert text at a specific line in a file: sed can be used to insert text at a specific line in a file. For example, to insert the text "Hello, World!" at line 5 of a file:
+**Insert text at a specific line in a file**: 
+
+sed can be used to insert text at a specific line in a file. For example, to insert the text "Hello, World!" at line 5 of a file:
 
 ```
 sed '5iHello, World!' file.txt
 ```
 
-Modify text in a file based on a pattern: sed can be used to perform transformations on text in a file based on a pattern. For example, to change all numbers in a file to uppercase:
+**Modify text in a file based on a pattern**: 
+
+sed can be used to perform transformations on text in a file based on a pattern. For example, to change all numbers in a file to uppercase:
 
 ```
 sed 's/[0-9]/\U&/g' file.txt
 ```
 
-Modify text in a file using regular expressions: sed supports regular expressions, which allow you to specify more complex patterns to match and transform. For example, to replace all three-digit numbers in a file with the text "XXX":
+**Modify text in a file using regular expressions**: 
+
+sed supports regular expressions, which allow you to specify more complex patterns to match and transform. For example, to replace all three-digit numbers in a file with the text "XXX":
 
 ```
 sed 's/[0-9][0-9][0-9]/XXX/g' file.txt
