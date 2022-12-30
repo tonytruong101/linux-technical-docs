@@ -10,12 +10,73 @@ Rsync is a command-line utility that is used to synchronize files between system
 
 1. Rsync transfers the differences between the files from the source system to the target system or vice versa, depending on the direction of the transfer. Rsync can transfer files in both directions and preserve the file attributes (such as the permissions and timestamps) of the transferred files.
 
-Here is a simple example of an rsync command that synchronizes the files in a local directory with a remote directory:
+
+## Rsync Options & What they do
+
+list of some common options that can be used with rsync:
+
+- **-a**: Archive mode. Preserve file permissions, ownership, and timestamps.
+- **-v**: Verbose mode. Enable verbose output.
+- **-z**: Compress mode. Enable compression during the transfer.
+- **--delete**: Delete files in the destination that no longer exist in the source.
+- **--exclude**: Exclude files that match a specified pattern.
+- **--dry-run**: Perform a trial run without actually transferring any files.
+- **--link-dest**: Create hard links to files in a specified directory.
+- **--force**: Force deletion of directories even if they are not empty.
+- **--update**: Skip files that are newer on the destination.
+- **--stats**: Show file transfer statistics.
+
+**Simple example of an rsync command that synchronizes the files in a local directory with a remote directory**:
 
 ```
 rsync -avz /local/directory username@remote:/remote/directory
 ```
 This command synchronizes the files in the local directory /local/directory with the remote directory /remote/directory. The files are transferred in binary mode and the file attributes are preserved.
+
+
+**Example --delete option to delete files in the destination that no longer exist in the source:**
+
+```
+rsync -avz --delete local/dir/ user@remote:/remote/dir/
+```
+This will synchronize the local directory local/dir/ with the remote directory /remote/dir/, deleting any files in the destination that no longer exist in the source, and transferring only the files that have changed and preserving file permissions, ownership, and timestamps.
+
+**Example --exclude option to exclude files that match a specified pattern:**
+
+```
+rsync -avz --exclude='*.tmp' local/dir/ user@remote:/remote/dir/
+```
+This will synchronize the local directory local/dir/ with the remote directory /remote/dir/, excluding any files that end with .tmp, and transferring only the files that have changed and preserving file permissions, ownership, and timestamps.
+
+**Example --dry-run option to perform a trial run without actually transferring any files:**
+
+```
+rsync -avz --dry-run local/dir/ user@remote:/remote/dir/
+```
+This will perform a trial run of the synchronization, showing what files would be transferred and deleted without actually transferring or deleting any files.
+
+## Other Example Use Cases of Rsync
+
+**Synchronize a local directory with a remote directory:**
+
+```
+rsync -avz local/dir/ user@remote:/remote/dir/
+```
+This will synchronize the local directory local/dir/ with the remote directory /remote/dir/, transferring only the files that have changed and preserving file permissions, ownership, and timestamps. The -a option stands for "archive mode," which preserves file permissions, ownership, and timestamps, and the -v option stands for "verbose" and enables verbose output, and the -z option stands for "compress" and enables compression during the transfer.
+
+**Synchronize a local directory with a remote directory, excluding certain files:**
+
+```
+rsync -avz --exclude='*.tmp' local/dir/ user@remote:/remote/dir/
+```
+This will synchronize the local directory local/dir/ with the remote directory /remote/dir/, excluding any files that end with .tmp, and transferring only the files that have changed and preserving file permissions, ownership, and timestamps. The --exclude option allows you to specify patterns of files to exclude from the synchronization.
+
+**Synchronize a local directory with a remote directory, deleting files that no longer exist in the source:**
+
+```
+rsync -avz --delete local/dir/ user@remote:/remote/dir/
+```
+This will synchronize the local directory local/dir/ with the remote directory /remote/dir/, deleting any files in the destination that no longer exist in the source, and transferring only the files that have changed and preserving file permissions, ownership, and timestamps. The --delete option causes rsync to delete files in the destination that no longer exist in the source.
 
 ## When to Use
 
